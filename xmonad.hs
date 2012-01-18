@@ -16,8 +16,9 @@ main = do
     		{ ppOutput = hPutStrLn xmproc
     		, ppTitle = xmobarColor "green" "" . shorten 50
     		}
-    } `additionalKeys`
-    , ((mod4Mask, xK_Print), spawn "sleep 0.5; scrot -s")
+    }
+    `additionalKeys`
+    [ ((mod4Mask, xK_Print), spawn "sleep 0.5; scrot -s")
     , ((0, xK_Print), spawn "scrot")
     ]
 
