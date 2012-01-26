@@ -9,8 +9,9 @@ Config { font = "xft:Bitstream Vera Sans Mono:size=8:antialias=true"
                     , Run Swap [] 10
                     , Run Date "%a %b %_d %Y %_I:%M:%S%P" "date" 10
                     , Run StdinReader
+                    , Run Com "/home/grahjm2a/bin/mail_display.sh" [] "mail" 600
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %StdinReader% }{ %multicpu% | %memory% * %swap% | %eth0% | <fc=#ee9a00>%date%</fc> "
+       , template = " %StdinReader% }{ %mail% | %multicpu% | %memory% * %swap% | %eth0% | <fc=#ee9a00>%date%</fc> "
        }
