@@ -5,17 +5,12 @@ import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
 import System.IO
 
--- needed to let offlineimap get access to gnome-keyring
-startuphook :: X ()
-startuphook = spawn "$HOME/bin/export_x_info.sh"
-
 main = do
   xmproc <- spawnPipe "xmobar"
   xmonad $ defaultConfig
     { terminal = "urxvt"
     , modMask = mod4Mask -- rebind to windows key
     , manageHook = manageDocks <+> manageHook defaultConfig
-    , startupHook = startuphook
     , layoutHook = avoidStruts $ layoutHook defaultConfig
     , logHook = dynamicLogWithPP xmobarPP
     		{ ppOutput = hPutStrLn xmproc
