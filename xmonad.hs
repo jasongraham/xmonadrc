@@ -8,7 +8,7 @@ import System.IO
 main = do
   xmproc <- spawnPipe "xmobar"
   xmonad $ defaultConfig
-    { terminal = "urxvt"
+    { terminal = "urxvtc"
     , modMask = mod4Mask -- rebind to windows key
     , manageHook = manageDocks <+> manageHook defaultConfig
     , layoutHook = avoidStruts $ layoutHook defaultConfig
