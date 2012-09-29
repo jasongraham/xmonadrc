@@ -21,5 +21,6 @@ main = do
     [ ((mod4Mask, xK_Print), spawn "sleep 0.5; scrot -s")
     , ((0, xK_Print), spawn "scrot")
     , ((mod4Mask .|. shiftMask, xK_l), spawn "slock")
+    , ((mod4Mask, xK_b), sendMessage ToggleStruts)
     ]
 
