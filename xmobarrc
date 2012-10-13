@@ -1,10 +1,10 @@
-Config { font = "xft:Bitstream Vera Sans Mono:size=8:antialias=true"
-       , bgColor = "black"
-       , fgColor = "grey"
+Config { font = "xft:DejaVu Sans Mono:size=8:antialias=true"
+       , bgColor = "#002b36"
+       , fgColor = "#657b83"
        , position = Top
        , lowerOnStart = True
-       , commands = [ Run Network "eth0" ["-L","0","-H","32","--normal","green","--high","red"] 10
-                    , Run MultiCpu ["-t","Cpu1: <total0>% - Cpu2: <total1>%","-L","3","-H","50","--normal","green","--high","red"] 10
+       , commands = [ Run Network "eth0" ["-L","0","-H","32","--normal","#859900","--high","#dc322f"] 10
+                    , Run MultiCpu ["-t","Cpu1: <total0>% - Cpu2: <total1>%","-L","3","-H","50","--normal","#859900","--high","#dc322f"] 10
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
                     , Run Swap [] 10
                     , Run Date "%a %b %_d %Y %_I:%M:%S%P" "date" 10
@@ -13,5 +13,5 @@ Config { font = "xft:Bitstream Vera Sans Mono:size=8:antialias=true"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %StdinReader% }{ %mail% | %multicpu% | %memory% * %swap% | %eth0% | <fc=#ee9a00>%date%</fc> "
+       , template = " %StdinReader% }{ %mail% | %multicpu% | %memory% * %swap% | %eth0% | <fc=#cb4b16>%date%</fc> "
        }
