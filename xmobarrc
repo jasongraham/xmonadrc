@@ -10,8 +10,9 @@ Config { font = "xft:DejaVu Sans Mono:size=8:antialias=true"
                     , Run Date "%a %b %_d %Y %_I:%M:%S%P" "date" 10
                     , Run StdinReader
                     , Run Com "/home/grahjm2a/bin/mail_display.sh" [] "mail" 600
+                    , Run CommandReader "~/.pymodoro/pymodoro.py -sp ding.wav -sb deskbell.wav" "pomodoro"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %StdinReader% }{ %mail% | %multicpu% | %memory% * %swap% | %eth0% | <fc=#cb4b16>%date%</fc> "
+       , template = " %StdinReader% }{ %pomodoro% | %mail% | %multicpu% | %memory% * %swap% | %eth0% | <fc=#cb4b16>%date%</fc> "
        }
