@@ -1,0 +1,14 @@
+Config { font = "xft:DejaVu Sans Mono:size=8:antialias=true"
+       , bgColor = "#002b36"
+       , fgColor = "#657b83"
+       , position = Top
+       , lowerOnStart = True
+       , commands = [ Run StdinReader
+                    , Run DiskU [("/", "root:<used>/<size> |"), ("/home", "home:<used>/<size>")]
+                                ["-L", "20", "-H", "50", "-m", "1", "-p", "3"] 20
+                    , Run Weather "KPUW" ["-t", "<station>: <tempF>F"] 36000
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = " %StdinReader% }{ %disku% | <fc=#cb4b16>%KPUW%</fc> "
+       }

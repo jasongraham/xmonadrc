@@ -13,7 +13,6 @@ if [ $DIR == $HOME/.xmonad ] ; then
     exit 1
 fi
 
-rm -rf $HOME/.xmonad $HOME/.xmobarrc
+rm -rf $HOME/.xmonad
 ln -s $DIR $HOME/.xmonad
-ln -s $HOME/.xmonad/xmobarrc $HOME/.xmobarrc
 

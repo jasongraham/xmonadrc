@@ -6,16 +6,22 @@ import XMonad.Util.EZConfig(additionalKeys)
 import System.IO
 
 main = do
-  xmproc <- spawnPipe "xmobar"
+  xmproc0 <- spawnPipe "xmobar -x 0 $HOME/.xmonad/mainxmobarrc"
+  xmproc1 <- spawnPipe "xmobar -x 1 $HOME/.xmonad/auxxmobarrc"
   xmonad $ defaultConfig
     { terminal = "urxvtc"
     , modMask = mod4Mask -- rebind to windows key
     , manageHook = manageDocks <+> manageHook defaultConfig
     , layoutHook = avoidStruts $ layoutHook defaultConfig
+    , handleEventHook = docksEventHook <+> handleEventHook defaultConfig
     , logHook = dynamicLogWithPP xmobarPP
-    		{ ppOutput = hPutStrLn xmproc
-    		, ppTitle = xmobarColor "green" "" . shorten 50
-    		}
+            { ppOutput = hPutStrLn xmproc0
+            , ppTitle = xmobarColor "green" "" . shorten 50
+            }
+            >> dynamicLogWithPP xmobarPP
+            { ppOutput = hPutStrLn xmproc1
+            , ppTitle = xmobarColor "green" "" . shorten 50
+            }
     }
     `additionalKeys`
     [ ((mod4Mask, xK_Print), spawn "sleep 0.5; scrot -s")
