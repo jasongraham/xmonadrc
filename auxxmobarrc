@@ -4,8 +4,7 @@ Config { font = "xft:DejaVu Sans Mono:size=8:antialias=true"
        , position = Top
        , lowerOnStart = True
        , commands = [ Run StdinReader
-                    , Run DiskU [("/", "root:<used>/<size> |"), ("/home", "home:<used>/<size>")]
-                                ["-L", "20", "-H", "50", "-m", "1", "-p", "3"] 20
+                    , Run DiskU [("/", "root:<used>/<size> |"), ("/home", "home:<used>/<size> |"), ("/extra", "extra:<used>/<size>")] ["-L", "20", "-H", "50", "-m", "1", "-p", "3"] 20
                     , Run Weather "KPUW" ["-t", "<station>: <tempF>F"] 36000
                     ]
        , sepChar = "%"
