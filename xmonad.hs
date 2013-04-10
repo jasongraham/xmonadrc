@@ -29,5 +29,6 @@ main = do
     , ((mod4Mask .|. shiftMask, xK_l), spawn "slock")
     , ((mod4Mask, xK_b), sendMessage ToggleStruts)
     , ((mod4Mask, xK_n), spawn "~/bin/pomodoro_toggle")
+    , ((mod4Mask .|. shiftMask, xK_q), spawn "systemctl --user exit")
     ]
 
