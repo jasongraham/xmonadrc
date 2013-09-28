@@ -29,6 +29,8 @@ main = do
     , ((mod4Mask .|. shiftMask, xK_l), spawn "slock")
     , ((mod4Mask, xK_b), sendMessage ToggleStruts)
     , ((mod4Mask, xK_n), spawn "~/bin/pomodoro_toggle")
-    , ((mod4Mask .|. shiftMask, xK_q), spawn "systemctl --user exit")
+    -- If systemd user session work this way again in the future, I can come
+    -- back to this.
+    --, ((mod4Mask .|. shiftMask, xK_q), spawn "systemctl --user exit")
     ]
 
