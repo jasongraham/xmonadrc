@@ -26,9 +26,10 @@ main = do
     `additionalKeys`
     [ ((mod4Mask, xK_Print), spawn "sleep 0.5; scrot -s")
     , ((0, xK_Print), spawn "scrot")
-    , ((mod4Mask .|. shiftMask, xK_l), spawn "slock")
     , ((mod4Mask, xK_b), sendMessage ToggleStruts)
     , ((mod4Mask, xK_n), spawn "~/bin/pomodoro_toggle")
+    , ((mod4Mask, xK_p), spawn "rofi -modi run -show run")
+    , ((mod4Mask .|. shiftMask, xK_p), spawn "rofi-pass")
     -- If systemd user session work this way again in the future, I can come
     -- back to this.
     --, ((mod4Mask .|. shiftMask, xK_q), spawn "systemctl --user exit")
